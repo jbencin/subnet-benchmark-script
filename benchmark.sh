@@ -13,7 +13,7 @@ mkdir -p "$parent_dir"
 cd "$parent_dir"
 [ -d stacks-subnets ] || git clone https://github.com/hirosystems/stacks-subnets
 cd stacks-subnets
-git checkout benchmarking
+git checkout develop
 
 # Run benchmarks
 declare -a tests=( "test_15s_block" "test_max_block" "test_15s_block_stx_transfers_only" "test_max_block_stx_transfers_only" )
