@@ -21,7 +21,7 @@ for test in "${tests[@]}"; do
     logfile="$test.log"
     cargo test --package stacks-subnets --lib -- "chainstate::stacks::bench::tests::$test" --exact --nocapture --ignored &> "$logfile"
     echo "----- RESULTS FOR $test -----"
-    grep "Miner: mined anchored block" < "$logfile"
+    grep "Miner: mined anchored block" < "$logfile" | tail -n 1
     tail -n 3 "$logfile"
 done
 
